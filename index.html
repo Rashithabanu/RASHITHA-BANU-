@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #161b22;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #30363d;
+    }
+    header h1 {
+      color: #58a6ff;
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #c9d1d9;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #58a6ff;
+    }
+    .card {
+      background-color: #161b22;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #161b22;
+      border-top: 2px solid #30363d;
+      margin-top: 20px;
+    }
+    button {
+      background-color: #58a6ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1f6feb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RASHITHA BAU</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Hello! I’m a cybersecurity enthusiast passionate about ethical hacking, network defense, and security research. I aim to protect digital systems from threats and vulnerabilities.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>🔐 Password Strength Checker</h3>
+      <p>A tool that checks how strong your password is using JavaScript.</p>
+      <button onclick="checkPassword()">Try Demo</button>
+      <p id="result"></p>
+    </div>
+    <div class="card">
+      <h3>🛡️ Network Scanner</h3>
+      <p>Built a simple Python-based tool to scan open ports and detect vulnerabilities.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <ul>
+        <li>✅ Ethical Hacking</li>
+        <li>✅ Penetration Testing</li>
+        <li>✅ Web Application Security</li>
+        <li>✅ Python & JavaScript</li>
+        <li>✅ Risk Assessment</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="#">github.com/yourprofile</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Cybersecurity Portfolio</p>
+  </footer>
+
+  <script>
+    function checkPassword() {
+      let password = prompt("Enter your password:");
+      let result = document.getElementById("result");
+      if (!password) {
+        result.innerHTML = "❌ No password entered!";
+        return;
+      }
+      let strength = 0;
+      if (password.length >= 8) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[@$!%*?&]/.test(password)) strength++;
+
+      if (strength <= 1) {
+        result.innerHTML = "⚠️ Weak Password";
+        result.style.color = "red";
+      } else if (strength === 2) {
+        result.innerHTML = "🟡 Medium Password";
+        result.style.color = "orange";
+      } else {
+        result.innerHTML = "✅ Strong Password";
+        result.style.color = "lightgreen";
+      }
+    }
+  </script>
+</body>
+</html>
